@@ -7,5 +7,9 @@ TextingApp::Application.routes.draw do
   end
 
   resources :welcome, :only => :index
-  root to: 'welcome#index'
+
+  authenticated :user do
+    root :to => 'users#show', as: :authenticated_root
+  end
+  root :to => 'welcome#index'
 end
