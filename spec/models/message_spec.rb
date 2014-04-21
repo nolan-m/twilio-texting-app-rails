@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Message do
+describe Message, :vcr => true do
   it { should validate_presence_of :to }
   it { should validate_presence_of :from }
   it { should validate_presence_of :body }
@@ -15,7 +15,6 @@ describe Message do
 
   it "displays the status after a message is sent" do
     message = Message.create(:body => "howdy", :to => "15005550006", :from => "15005550006")
-    p message
     message.status.should eq "queued"
   end
 end

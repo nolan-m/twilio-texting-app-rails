@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<twilio account sid>:<twilio auth token>@api.twilio.com/2010-04-01/Accounts/<twilio
+      account sid>/Messages.json
+    body:
+      encoding: US-ASCII
+      string: To=15005550006&From=15005550006&Body=howdy
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '42'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Mon, 21 Apr 2014 21:30:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '637'
+      Connection:
+      - close
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+    body:
+      encoding: UTF-8
+      string: "{\"sid\": \"SMccbb7425ea784e43b34d99bd00735a9a\", \"date_created\":
+        null, \"date_updated\": null, \"date_sent\": null, \"account_sid\": \"<twilio
+        account sid>\", \"to\": \"+15005550006\", \"from\": \"15005550006\", \"body\":
+        \"howdy\", \"status\": \"queued\", \"num_segments\": null, \"num_media\":
+        \"0\", \"direction\": \"outbound-api\", \"api_version\": \"2010-04-01\", \"price\":
+        null, \"price_unit\": \"USD\", \"uri\": \"/2010-04-01/Accounts/<twilio account
+        sid>/Messages/SMccbb7425ea784e43b34d99bd00735a9a.json\", \"subresource_uris\":
+        {\"media\": \"/2010-04-01/Accounts/<twilio account sid>/Messages/SMccbb7425ea784e43b34d99bd00735a9a/Media.json\"}}"
+    http_version: 
+  recorded_at: Mon, 21 Apr 2014 21:30:08 GMT
+recorded_with: VCR 2.9.0
