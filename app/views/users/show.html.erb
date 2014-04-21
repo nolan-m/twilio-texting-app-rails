@@ -2,6 +2,6 @@
 
 <ul>
   <% @user.messages.each do |msg| %>
-    <li><%= msg.body %> to <%= msg.to %></li>
+    <li><%= msg.body %> to <%= msg.to %> status: <%= msg.status %></li>
   <% end %>
 </ul>

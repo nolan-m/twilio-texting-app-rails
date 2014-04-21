@@ -26,7 +26,7 @@ group :test, :development do
   gem 'launchy'
   gem 'letter_opener'
   gem 'faker'
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', :groups => [:development, :test]
   gem 'pry'
   gem 'pry-debugger'
 end

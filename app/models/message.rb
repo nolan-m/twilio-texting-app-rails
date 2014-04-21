@@ -14,13 +14,16 @@ class Message < ActiveRecord::Base
       begin
        response = RestClient::Request.new(
          :method => :post,
-         :url => 'https://@api.twilio.com/2010-04-01/Accounts/ACfbd6e240902d8750b0d492eb558ecafc/Messages.json',
+         :url => "https://@api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages.json",
          :user => ENV['TWILIO_ACCOUNT_SID'],
          :password => ENV['TWILIO_AUTH_TOKEN'],
          :payload => { :To => to,
                        :From => from,
                        :Body => body }
        ).execute
+
+      parsed_response = JSON.parse(response)
+      self.status = parsed_response['status']
       rescue
         false
       end
