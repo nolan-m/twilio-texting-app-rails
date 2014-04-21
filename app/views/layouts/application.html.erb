@@ -11,7 +11,16 @@
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <%= link_to "TEXTING_APP", root_url, :class => "navbar-text navbar-left" %>
-        <%= link_to "New Message", new_message_path, :class => "navbar-text navbar-left" %>
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => "navbar-text navbar-right" %>
+          <span class="navbar-text navbar-right">Logged in as <strong><%= current_user.email %></strong>.</span>
+
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path, :class => "navbar-text navbar-right" %>
+          <%= link_to "Log in", new_user_session_path, :class => "navbar-text navbar-right" %>
+
+        <% end %>
+
       </div>
     </div>
 

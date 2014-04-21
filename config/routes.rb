@@ -6,6 +6,6 @@ TextingApp::Application.routes.draw do
     resources :contacts
   end
 
-
-  root to: 'message#index'
+  resources :welcome, :only => :index
+  root to: 'welcome#index'
 end
