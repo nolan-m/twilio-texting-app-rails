@@ -1,4 +1,11 @@
 TextingApp::Application.routes.draw do
   devise_for :users
-  root to: 'users#index'
+
+  resources :users, :only => [:index, :show] do
+    resources :messages
+    resources :contacts
+  end
+
+
+  root to: 'message#index'
 end
