@@ -8,18 +8,25 @@
     <%= f.text_field :from %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" id="to-field">
     <%= f.label :to %></br>
     <%= f.text_field :to %>
   </div>
 
+  <div class="form-group">
+    <span id='contact-btn' class='btn btn-default'>Select from Contacts</span>
+  </div>
+
+  <div class="form-group" id="contacts-dropdown">
+    <%= f.collection_select(:to, current_user.contacts.all, :phone, :name) %>
+  </div>
   <div class="form-group">
     <%= f.label :body, "Message" %></br>
     <%= f.text_area :body %>
   </div>
 
 
-  <div class="form-group">
+  <div class="form-group" id="save-check">
     <%= label_tag :save_contact %>
     <%= check_box_tag :save_contact %>
   </div>
@@ -28,6 +35,8 @@
     <%= label_tag :name %>
     <%= text_field_tag :name %>
   </div>
+
+
 
 
   <%= f.submit(:class => "btn btn-default") %>

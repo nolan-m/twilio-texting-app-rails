@@ -2,7 +2,7 @@
 
 Build an app that lets users send text messages to their friends.
 
-As a user, I want to send a text message to a phone number, so that I can send texts from the web. Hint: Follow along with the lesson.
+-DONE-As a user, I want to send a text message to a phone number, so that I can send texts from the web.
 
 As a user, I want to save contacts to an address book, so that it's easy to text them again without re-typing their phone number.
 
