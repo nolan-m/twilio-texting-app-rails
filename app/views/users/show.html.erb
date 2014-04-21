@@ -1,5 +1,7 @@
 <h3><%= @user.email %></h3>
 
-<% @user.messages.each do |msg| %>
-  <%= msg.body %> to <%= msg.to %>
-<% end %>
+<ul>
+  <% @user.messages.each do |msg| %>
+    <li><%= msg.body %> to <%= msg.to %></li>
+  <% end %>
+</ul>
