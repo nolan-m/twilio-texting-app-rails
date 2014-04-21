@@ -24,7 +24,9 @@ class Message < ActiveRecord::Base
 
       parsed_response = JSON.parse(response)
       self.status = parsed_response['status']
-      rescue
+      rescue RestClient::BadRequest => error
+        message = JSON.parse(error.response)['message']
+        errors.add(:base, message)
         false
       end
     end
