@@ -5,4 +5,12 @@ class Contact < ActiveRecord::Base
   has_and_belongs_to_many :messages
   belongs_to :user
 
+  before_create :format_number
+
+private
+
+  def format_number
+    self.phone.gsub!('-','')
+  end
+
 end

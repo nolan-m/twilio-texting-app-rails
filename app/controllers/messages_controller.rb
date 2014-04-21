@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       current_user.messages << @message
-      if params[:save_contact] == '1'
+      if params[:save_contact] == '1' && !current_user.contacts.any? {|c| c.phone == params[:message][:to]}
         current_user.contacts.create(:phone => params[:message][:to], :name => params[:name])
       end
       flash[:notice] = "Message sent."

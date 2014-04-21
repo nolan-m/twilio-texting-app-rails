@@ -8,7 +8,13 @@ class Message < ActiveRecord::Base
 
   before_create :send_sms
 
+  before_create :format_number
+
   private
+
+    def format_number
+      self.to.gsub!('-','')
+    end
 
     def send_sms
       begin
