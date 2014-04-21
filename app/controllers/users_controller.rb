@@ -4,6 +4,7 @@ class UsersController < ApplicationController
       @user = current_user
     else
       @user = User.find(params[:id])
+
     end
   end
 end

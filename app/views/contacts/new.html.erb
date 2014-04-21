@@ -1,0 +1,15 @@
+<h1>New Contact </h1>
+<%= render("layouts/errors", :object => @contact) %>
+
+
+<%= form_for [current_user, @contact] do |f| %>
+ <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+   <div class="form-group">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <%= f.submit :class => 'btn btn-default' %>
+<% end %>

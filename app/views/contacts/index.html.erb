@@ -1,0 +1,10 @@
+<h1>Contacts</h1>
+
+<ul>
+<% current_user.contacts.each do |contact| %>
+  <li><%= contact.name %> | <%= contact.phone %></li>
+<% end %>
+</ul>
+
+<hr>
+<%= link_to "Add Contact", new_user_contact_path(current_user), :class => "btn btn-danger" %>
