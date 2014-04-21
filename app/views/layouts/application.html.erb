@@ -14,7 +14,7 @@
         <% if user_signed_in? %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => "navbar-text navbar-right" %>
           <span class="navbar-text navbar-right">Logged in as <strong><%= current_user.email %></strong>.</span>
-
+          <%= link_to "New Message", new_user_message_path(current_user), :class => "navbar-text navbar-left" %>
         <% else %>
           <%= link_to "Sign Up", new_user_registration_path, :class => "navbar-text navbar-right" %>
           <%= link_to "Log in", new_user_session_path, :class => "navbar-text navbar-right" %>
