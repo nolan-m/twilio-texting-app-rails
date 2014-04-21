@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'rest-client'
 gem 'devise'
 
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -34,4 +35,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
+  gem 'psych'
 end
