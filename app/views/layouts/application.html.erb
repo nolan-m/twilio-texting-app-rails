@@ -10,6 +10,7 @@
 
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
+
         <%= link_to "TEXTING_APP", root_url, :class => "navbar-text navbar-left" %>
         <% if user_signed_in? %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => "navbar-text navbar-right" %>
@@ -26,9 +27,17 @@
     </div>
 
 <div class="container">
-  <%= flash[:notice] %>
-  <%= flash[:alert] %>
-  <%= yield %>
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+      <%= yield %>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
 </div>
 
 </body>

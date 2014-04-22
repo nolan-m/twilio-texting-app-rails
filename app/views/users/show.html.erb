@@ -1,8 +1,11 @@
-<h3><%= @user.email %></h3>
+<h3>Welcome, <%= @user.email %></h3>
 
-<ul>
-  <% @user.messages.each do |msg| %>
-    <li><%= link_to "Message sent to #{msg.to}", user_message_path(@user, msg) %></li>
-  <% end %>
-</ul>
-
+<% if @user.messages.nil? %>
+  <p> No sent messages </p>
+<% else %>
+  <ul>
+    <% @user.messages.each do |msg| %>
+      <li><%= link_to "Message sent to #{msg.to}", user_message_path(@user, msg) %></li>
+    <% end %>
+  </ul>
+<% end %>

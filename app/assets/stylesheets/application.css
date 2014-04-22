@@ -15,4 +15,10 @@
 
 body {
   padding-top: 70px;
+  background-image:url('background.png');
+  background-repeat:repeat;
+}
+.col-md-8{
+  background: white;
+  padding-bottom: 20px;
 }
