@@ -2,9 +2,9 @@
 
 Build an app that lets users send text messages to their friends.
 
--DONE-As a user, I want to send a text message to a phone number, so that I can send texts from the web.
+-DONE- As a user, I want to send a text message to a phone number, so that I can send texts from the web.
 
-As a user, I want to save contacts to an address book, so that it's easy to text them again without re-typing their phone number.
+-DONE- As a user, I want to save contacts to an address book, so that it's easy to text them again without re-typing their phone number.
 
 As a user, I want to send a message to more than one person at once, so that I can mass text my friends.
 

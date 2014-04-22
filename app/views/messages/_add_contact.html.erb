@@ -1,0 +1,7 @@
+<div class='form-group'>
+  <%= label_tag :to %></br>
+  <%= text_field_tag 'to_tags[]',nil,  :id => 'contact_field' %>
+  <%= select_tag 'to_tags[]', options_from_collection_for_select(current_user.contacts, :id, :name) %>
+
+
+</div>

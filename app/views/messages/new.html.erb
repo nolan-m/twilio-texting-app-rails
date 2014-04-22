@@ -1,4 +1,4 @@
-<div class="col-md-8">
+
 <h1>New Message</h1>
 
 <%= render("layouts/errors", :object => @message) %>
@@ -9,9 +9,14 @@
     <%= f.text_field :from %>
   </div>
 
-  <div class="form-group" id="to-field">
-    <%= f.label :to %></br>
-    <%= f.text_field :to %>
+  <div id='add_contact_form'>
+    <%= render ('add_contact') %>
+  </div>
+  <div id='contacts'>
+  </div>
+
+  <div class="form-group">
+    <span class='btn btn-default' id='add-contact'>Add another contact</span>
   </div>
 
   <div class="form-group">
@@ -42,4 +47,4 @@
 
   <%= f.submit(:class => "btn btn-default") %>
 <% end %>
-</div>
+

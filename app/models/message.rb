@@ -8,27 +8,24 @@ class Message < ActiveRecord::Base
 
   before_create :send_sms
   before_create :format_number
-  after_find :find_status
 
+  def find_status
+    response = RestClient::Request.new(
+         :method => :get,
+         :url => "https://@api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages/#{self.sid}.json",
+         :user => ENV['TWILIO_ACCOUNT_SID'],
+         :password => ENV['TWILIO_AUTH_TOKEN']
+       ).execute
+    parsed_response = JSON.parse(response)
+    self.status = parsed_response['status']
+    self.save
+  end
 
   private
 
     def format_number
       self.to.gsub!('-','')
     end
-
-    def find_status
-      response = RestClient::Request.new(
-           :method => :get,
-           :url => "https://@api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages/#{self.sid}.json",
-           :user => ENV['TWILIO_ACCOUNT_SID'],
-           :password => ENV['TWILIO_AUTH_TOKEN']
-         ).execute
-      parsed_response = JSON.parse(response)
-      self.status = parsed_response['status']
-    end
-
-
 
     def send_sms
       begin

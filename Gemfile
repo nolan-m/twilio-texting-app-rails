@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'rest-client'
 gem 'devise'
+gem 'jquery-turbolinks'
 
 
 group :development do
