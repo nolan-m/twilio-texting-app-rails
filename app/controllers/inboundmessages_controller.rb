@@ -1,0 +1,3 @@
+class InboundMessagesController < ApplicationController
+
+end
